@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/routing/routes.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1754452725494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754452738164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-export const \n\\ No newline at end of file\n+export const customRoutes = [\r\n+    \r\n+]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452749818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n export const customRoutes = [\r\n-    \r\n+    {\r\n+        route\r\n+    }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452762271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n export const customRoutes = [\r\n     {\r\n-        route\r\n+        routeElement\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452768145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n export const customRoutes = [\r\n     {\r\n-        routeElement\r\n+        routeElement : <Home\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452774752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n+import { Home } from \"../pages\";\r\n+\r\n export const customRoutes = [\r\n     {\r\n-        routeElement : <Home\r\n+        routeElement : <Home/>,\r\n+        \r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452780392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n \r\n export const customRoutes = [\r\n     {\r\n         routeElement : <Home/>,\r\n-        \r\n+        routePath : ''\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452787059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,10 @@\n \r\n export const customRoutes = [\r\n     {\r\n         routeElement : <Home/>,\r\n-        routePath : ''\r\n+        routePath : '/'\r\n+    },\r\n+    {\r\n+        \r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452794692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n         routeElement : <Home/>,\r\n         routePath : '/'\r\n     },\r\n     {\r\n-        \r\n+        routeElement : <Se\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452814517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-import { Home } from \"../pages\";\r\n+import { Home, Settings } from \"../pages\";\r\n \r\n export const customRoutes = [\r\n     {\r\n         routeElement : <Home/>,\r\n         routePath : '/'\r\n     },\r\n     {\r\n-        routeElement : <Se\r\n+        routeElement : <Settings/>\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452819850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n         routeElement : <Home/>,\r\n         routePath : '/'\r\n     },\r\n     {\r\n-        routeElement : <Settings/>\r\n+        routeElement : <Settings/>,\r\n+        route\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452826769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n         routePath : '/'\r\n     },\r\n     {\r\n         routeElement : <Settings/>,\r\n-        route\r\n+        routePath : '/settings'\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452832792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,9 @@\n     },\r\n     {\r\n         routeElement : <Settings/>,\r\n         routePath : '/settings'\r\n+    },\r\n+    {\r\n+        \r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452839017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n         routeElement : <Settings/>,\r\n         routePath : '/settings'\r\n     },\r\n     {\r\n-        \r\n+        routeElement : <\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452844563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n         routeElement : <Settings/>,\r\n         routePath : '/settings'\r\n     },\r\n     {\r\n-        routeElement : <ErrorPage/>>\r\n+        routeElement : <ErrorPage/>\r\n     }\r\n ]\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1754452725494,
+            "name": "Commit-0",
+            "content": "export const "
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/routing/Routing.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1754452879276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754452908794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,1 @@\n-import React from 'react'\r\n-\r\n-const Routing = () => {\r\n-  return (\r\n-    <div>Routing</div>\r\n-  )\r\n-}\r\n-\r\n-export default Routing\n\\ No newline at end of file\n+export const \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452914068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-export const \n\\ No newline at end of file\n+export const Routing = \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452922100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-export const Routing = \n\\ No newline at end of file\n+export const Routing = () => {\r\n+    \r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452954047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n export const Routing = () => {\r\n-    return ()\r\n+    return (\r\n+        \r\n+    )\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754452973659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export const Routing = () => {\r\n     return (\r\n         <Routes>\r\n             {\r\n-                customRoutes\r\n+                customRoutes?\r\n             }\r\n         </Routes>\r\n     )\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1754452879276,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst Routing = () => {\r\n  return (\r\n    <div>Routing</div>\r\n  )\r\n}\r\n\r\nexport default Routing"
+        }
+    ]
+}

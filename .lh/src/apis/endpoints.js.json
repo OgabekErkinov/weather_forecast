@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/apis/endpoints.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1754455386111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754455394568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-export \n\\ No newline at end of file\n+export const endpoints = {\r\n+    \r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754456416427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n export const endpoints = {\r\n-    \r\n+    current\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1754456474581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n export const endpoints = {\r\n-    current\r\n+    current : 'current'\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1754455386111,
+            "name": "Commit-0",
+            "content": "export "
+        }
+    ]
+}

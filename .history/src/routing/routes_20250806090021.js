@@ -1,0 +1,12 @@
+import { Home, Settings } from "../pages";
+
+export const customRoutes = [
+    {
+        routeElement : <Home/>,
+        routePath : '/'
+    },
+    {
+        routeElement : <Settings/>,
+        routePath 
+    }
+]

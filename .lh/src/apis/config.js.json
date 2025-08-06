@@ -1,0 +1,94 @@
+{
+    "sourceFile": "src/apis/config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1754454298902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754454309233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n \r\n import axios from 'axios';\r\n \r\n const api = axios.create({\r\n-  baseURL: 'http://localhost:3000', // sizning backend manzilingiz\r\n+  baseURL: 'http://localhost:3000', \r\n   headers: {\r\n     'x-api-key': 'mening_maxfiy_kalitim',\r\n     'Content-Type': 'application/json'\r\n   },\r\n-  timeout: 5000 // optional: 5 sekund ichida javob bo'lmasa, xatolik qaytaradi\r\n+  timeout: 5000\r\n });\r\n \r\n export default api;\r\n"
+                },
+                {
+                    "date": 1754454317983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-// services/api.js\r\n \r\n import axios from 'axios';\r\n \r\n const api = axios.create({\r\n"
+                },
+                {
+                    "date": 1754454325605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-\r\n import axios from 'axios';\r\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n"
+                },
+                {
+                    "date": 1754454353391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n-    'x-api-key': 'mening_maxfiy_kalitim',\r\n+    'x-api-key': 'db718c32fe914a9a8bf40756250608',\r\n     'Content-Type': 'application/json'\r\n   },\r\n   timeout: 5000\r\n });\r\n"
+                },
+                {
+                    "date": 1754454378264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import axios from 'axios';\r\n \r\n+const BASE\r\n+\r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n     'x-api-key': 'db718c32fe914a9a8bf40756250608',\r\n"
+                },
+                {
+                    "date": 1754454385719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from 'axios';\r\n \r\n-const BASE\r\n+const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n"
+                },
+                {
+                    "date": 1754454505734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import axios from 'axios';\r\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n \r\n+\r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n     'x-api-key': 'db718c32fe914a9a8bf40756250608',\r\n"
+                },
+                {
+                    "date": 1754454511752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import axios from 'axios';\r\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n+const apiKey\r\n \r\n-\r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n     'x-api-key': 'db718c32fe914a9a8bf40756250608',\r\n"
+                },
+                {
+                    "date": 1754454517284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import axios from 'axios';\r\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n-const apiKey\r\n+const api_key = \r\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n"
+                },
+                {
+                    "date": 1754454524122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import axios from 'axios';\r\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n-const api_key = \r\n+const api_key = import\r\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n"
+                },
+                {
+                    "date": 1754454537227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import axios from 'axios';\r\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n-const api_key = import\r\n+const api_key = import.meta.en\r\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n"
+                },
+                {
+                    "date": 1754454595947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import axios from 'axios';\r\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n-const api_key = import.meta.en\r\n+const api_key = import.meta.env.VITE_API_KEY\r\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n"
+                },
+                {
+                    "date": 1754455045846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n-    'x-api-key': 'db718c32fe914a9a8bf40756250608',\r\n+    'x-api-key': ,\r\n     'Content-Type': 'application/json'\r\n   },\r\n   timeout: 5000\r\n });\r\n"
+                },
+                {
+                    "date": 1754455051964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n-    'x-api-key': ,\r\n+    'x-api-key': api_key,\r\n     'Content-Type': 'application/json'\r\n   },\r\n   timeout: 5000\r\n });\r\n"
+                },
+                {
+                    "date": 1754455327296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from 'axios';\r\n \r\n-const BASE_URL = \"http://api.weatherapi.com/v1/forecast.json?key=db718c32fe914a9a8bf40756250608&q=London&days=5&aqi=yes&alerts=yes\"\r\n+const BASE_URL = \"http://api.weatherapi.com/v1\"\r\n const api_key = import.meta.env.VITE_API_KEY\r\n \r\n const api = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n"
+                },
+                {
+                    "date": 1754455337584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1\"\r\n const api_key = import.meta.env.VITE_API_KEY\r\n \r\n-const api = axios.create({\r\n+const privatepi = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n     'x-api-key': api_key,\r\n     'Content-Type': 'application/json'\r\n"
+                },
+                {
+                    "date": 1754455344669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,14 @@\n \r\n const BASE_URL = \"http://api.weatherapi.com/v1\"\r\n const api_key = import.meta.env.VITE_API_KEY\r\n \r\n-const privatepi = axios.create({\r\n+const privateApi = axios.create({\r\n   baseURL: 'http://localhost:3000', \r\n   headers: {\r\n     'x-api-key': api_key,\r\n     'Content-Type': 'application/json'\r\n   },\r\n   timeout: 5000\r\n });\r\n \r\n-export default api;\r\n+export default privateApi;\r\n"
+                },
+                {
+                    "date": 1754455912191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const BASE_URL = \"http://api.weatherapi.com/v1\"\r\n const api_key = import.meta.env.VITE_API_KEY\r\n \r\n const privateApi = axios.create({\r\n-  baseURL: 'http://localhost:3000', \r\n+  baseURL: BASE_URL, \r\n   headers: {\r\n     'x-api-key': api_key,\r\n     'Content-Type': 'application/json'\r\n   },\r\n"
+                },
+                {
+                    "date": 1754456799617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n \r\n const privateApi = axios.create({\r\n   baseURL: BASE_URL, \r\n   headers: {\r\n-    'x-api-key': api_key,\r\n     'Content-Type': 'application/json'\r\n   },\r\n   timeout: 5000\r\n });\r\n"
+                }
+            ],
+            "date": 1754454298902,
+            "name": "Commit-0",
+            "content": "// services/api.js\r\n\r\nimport axios from 'axios';\r\n\r\nconst api = axios.create({\r\n  baseURL: 'http://localhost:3000', // sizning backend manzilingiz\r\n  headers: {\r\n    'x-api-key': 'mening_maxfiy_kalitim',\r\n    'Content-Type': 'application/json'\r\n  },\r\n  timeout: 5000 // optional: 5 sekund ichida javob bo'lmasa, xatolik qaytaradi\r\n});\r\n\r\nexport default api;\r\n"
+        }
+    ]
+}

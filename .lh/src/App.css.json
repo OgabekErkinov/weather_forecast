@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/App.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1754451237508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754451242976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\n+import \n #root {\n   max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n"
+                },
+                {
+                    "date": 1754451248474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import \n+@impo\n #root {\n   max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n"
+                },
+                {
+                    "date": 1754451255886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-@impo\n+@import tailwindcss\n #root {\n   max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n"
+                },
+                {
+                    "date": 1754451261181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-@import tailwindcss\n+@import tailwindcss;\n #root {\n   max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n"
+                },
+                {
+                    "date": 1754451310306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n-@import tailwindcss;\n+@tailwind base;\n+@tailwind components;\n+@tailwind utilities;\n+\n #root {\n   max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n"
+                },
+                {
+                    "date": 1754451381449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n-@tailwind base;\n-@tailwind components;\n-@tailwind utilities;\n+@import \"tailwindcss\";\n \n #root {\n   max-width: 1280px;\n   margin: 0 auto;\n"
+                },
+                {
+                    "date": 1754451536556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-@import \"tailwindcss\";\n \n+\n #root {\n   max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n"
+                }
+            ],
+            "date": 1754451237508,
+            "name": "Commit-0",
+            "content": "\n#root {\n  max-width: 1280px;\n  margin: 0 auto;\n  padding: 2rem;\n  text-align: center;\n}\n\n.logo {\n  height: 6em;\n  padding: 1.5em;\n  will-change: filter;\n  transition: filter 300ms;\n}\n.logo:hover {\n  filter: drop-shadow(0 0 2em #646cffaa);\n}\n.logo.react:hover {\n  filter: drop-shadow(0 0 2em #61dafbaa);\n}\n\n@keyframes logo-spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  a:nth-of-type(2) .logo {\n    animation: logo-spin infinite 20s linear;\n  }\n}\n\n.card {\n  padding: 2em;\n}\n\n.read-the-docs {\n  color: #888;\n}\n"
+        }
+    ]
+}
