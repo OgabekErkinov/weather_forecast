@@ -1,10 +1,16 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter } from 'react-router'
 
 const Providers = ({ children }) => {
+
+  const queryClient = new QueryClient()
+
   return (
-    <BrowserRouter>
-       { children }
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        { children }
+      </BrowserRouter>
+    </QueryClientProvider>
   )
 }
 

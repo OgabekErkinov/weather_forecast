@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router"
 import { customRoutes } from "./routes"
 
-export const Routing = () => {
+const Routing = () => {
     return (
         <Routes>
             {
@@ -14,3 +14,5 @@ export const Routing = () => {
         </Routes>
     )
 }
+
+export default Routing

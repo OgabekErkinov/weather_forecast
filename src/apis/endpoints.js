@@ -1,3 +1,5 @@
 export const endpoints = {
-    current : 'current.json'
+    current : 'current.json',
+    forecast : 'forecast.json',
+    
 }
