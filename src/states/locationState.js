@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 
-const useLocation = create((set) => ({
+const useLocationStore = create((set) => ({
   currentLocation: 'Tashkent',
   setCurrentLocation: (payload) => set({ currentLocation: payload }),
 
@@ -10,4 +10,4 @@ const useLocation = create((set) => ({
                     countries: [...new Set([...state.countries, payload])].slice(-5)  }))
 }));
 
-export default useLocation
+export default useLocationStore
