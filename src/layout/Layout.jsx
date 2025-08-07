@@ -8,8 +8,7 @@ const Layout = () => {
       className="h-[100vh] w-[100vw] flex justify-center items-center p-2 bg-center bg-cover"
       style={{ backgroundImage: `url(${season_picture()})` }}
     >
-      {/* <Routing /> */}
-      <Alert_Window/>
+      <Routing />
     </div>
   );
 };

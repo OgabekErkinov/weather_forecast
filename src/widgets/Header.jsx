@@ -1,9 +1,7 @@
-import React from 'react'
 import SearchPanel from './searchPanel'
-import { useNavigate } from 'react-router'
+import Settings_button from '../common/Settings_button'
 
 const Header = () => {
-    const navigate = useNavigate()
   return (
     <header className='w-full flex justify-between items-center mb-4'>
 
@@ -11,17 +9,13 @@ const Header = () => {
         <SearchPanel/>
 
         {/* current season title in here */}
-        <h2>
+        <h2 className='text-2xl font-bold italic text-blue-600 hidden md:block'>
             Winter
         </h2>
 
         {/* settings button : link to settings page */}
-        <button onClick={()=>navigate('/settings')}
-        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-            ⚙️ Settings
-          </button>
-
-
+        <Settings_button/>
+        
     </header>
   )
 }
