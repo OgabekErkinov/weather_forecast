@@ -1,5 +1,5 @@
 import SearchPanel from './searchPanel'
-import Settings_button from '../common/Settings_button'
+import SettingsButton from '../common/Settings_button'
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
         </h2>
 
         {/* settings button : link to settings page */}
-        <Settings_button/>
+        <SettingsButton/>
         
     </header>
   )
