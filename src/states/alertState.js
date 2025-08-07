@@ -6,7 +6,9 @@ const useAlert = create((set) => ({
   setIsAlert: (payload) => set({ isAlert: payload }),
 
   message: '',
-  setMessage: (payload) => set({ message: payload })
+  setMessage: (payload) => set({ message: payload }),
+
+  404 : false
 }));
 
 export default useAlert
