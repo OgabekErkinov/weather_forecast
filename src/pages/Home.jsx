@@ -30,7 +30,7 @@ const Home = () => {
   const location = currentData.location;
 
   return (
-      <div className="w-[90%] h-[90%] overflow-y-scroll bg-white rounded-2xl shadow-xl p-6">
+      <div className="w-[90%] h-[90%] overflow-y-scroll sm:overflow-hidden bg-white rounded-2xl shadow-xl p-6">
          <div className='h-[80vh] sm:h-full w-full flex flex-col justify-between'>
         
            {/* Header */}
