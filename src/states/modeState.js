@@ -1,17 +1,21 @@
-import { create } from "zustand";
+import { create } from 'zustand'
 
-const useMode = create((set, get) => ({
+const useMode = create((set) => ({
   isLight: true,
+  bgMode: '#f2f4f8',        // Light mode: body background
+  secondBg: '#e2e8f0',      // Light mode: cards, buttons, small boxes
+  textMode: '#1c1c1e',      // Light mode: text
 
-  toggleMode: () => set((state) => ({ isLight: !state.isLight })),
+  toggleMode: () =>
+    set((state) => {
+      const isNowLight = !state.isLight
+      return {
+        isLight: isNowLight,
+        bgMode: isNowLight ? '#f2f4f8' : '#0f172a',
+        secondBg: isNowLight ? '#fff' : '#1e293b',
+        textMode: isNowLight ? '#1e3a8a' : '#fff',
+      }
+    }),
+}))
 
-  get bgMode() {
-    return get().isLight ? '#04367d' : '#0EA5E9';
-  },
-
-  get textMode() {
-    return get().isLight ? '#0EA5E9' : '#04367d';
-  }
-}));
-
-export default useMode;
+export default useMode

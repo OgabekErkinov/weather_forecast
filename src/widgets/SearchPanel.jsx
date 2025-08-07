@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import useLocationStore from "../states/locationState";
 
 const SearchPanel = () => {
+  const { setCurrentLocation, setCountries } = useLocationStore()
+  const [searchCountry, setSearchCountry] = useState('')
+
+  const handleClick = () => {
+    setCurrentLocation(searchCountry)
+    setCountries(searchCountry)
+  }
   return (
     <div className="h-[50px] w-[80%] sm:w-[300px] border border-gray-300 
                     rounded-full bg-white shadow-sm">
@@ -10,11 +19,14 @@ const SearchPanel = () => {
           {/* input to insert country name */}
            <input  type="text"
                    placeholder="Qidirish..."
+                   value={searchCountry}
+                   onChange={(e) => setSearchCountry(e?.target?.value)}
                    className="w-[90%] flex-grow h-full bg-transparent outline-none
-                              text-md font-bold text-gray-700" />
+                              text-md font-bold text-gray-700 px-2" />
           
           {/* search button */}
            <motion.button
+              onClick={() => handleClick()}
               whileTap={{ scale: 0.85 }}
               className="text-gray-600 hover:text-blue-500 transition-colors duration-200 cursor-pointer">
               <CiSearch size={24} />

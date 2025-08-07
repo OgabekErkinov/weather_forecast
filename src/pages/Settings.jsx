@@ -1,82 +1,98 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import useLocationStore from '../states/locationState'
+import useAlert from '../states/alertState'
+import useMode from '../states/modeState'
+import { getCurrentLocation } from '../utils/location'
+import { CiSettings, CiTempHigh } from 'react-icons/ci'
+import { WiMoonAltWaningCrescent1 } from 'react-icons/wi'
+import { MdPlace } from 'react-icons/md'
+import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router'
 
 const Settings = () => {
-  const [theme, setTheme] = useState('light')
-  const [defaultCity, setDefaultCity] = useState(localStorage.getItem('defaultCity') || '')
+  const { currentLocation, setCurrentLocation } = useLocationStore()
+  const { setIsAlert, setMessage } = useAlert()
+  const { isLight, toggleMode, bgMode, textMode } = useMode()
+  const [defaultCity, setDefaultCity] = useState(currentLocation || '')
   const [useGeolocation, setUseGeolocation] = useState(false)
-  const [unit, setUnit] = useState('C') // C or F
+  const navigate = useNavigate()
+  // const [unit, setUnit] = useState('C')
 
-  // Save default city
+  const handleBack = () => {
+    navigate('/')
+  }
   const handleSaveCity = () => {
-    localStorage.setItem('defaultCity', defaultCity)
-    alert('Shahar saqlandi!')
+    setCurrentLocation(defaultCity) 
   }
 
-  // Toggle theme
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-    document.documentElement.classList.toggle('dark', newTheme === 'dark')
-  }
+  useEffect(() => {
+    if (useGeolocation) {
+      getCurrentLocation(setIsAlert, setMessage).then((res) => {
+        setDefaultCity(res)
+        setCurrentLocation(res)
+      })
+    }
+  }, [useGeolocation])
 
-  // Clear cache (query + localStorage)
-  const handleClearCache = () => {
-    localStorage.clear()
-    alert('Kesh tozalandi!')
-    window.location.reload()
+  const handleLocationToggle = () => {
+    setUseGeolocation(prev => !prev)
   }
 
   return (
-    <div className="p-6 max-w-xl mx-auto text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-xl rounded-2xl mt-10">
-      <h1 className="text-2xl font-bold mb-4">⚙️ Sozlamalar</h1>
+    <div className="h-full w-full p-6 mx-auto" style={{ backgroundColor: bgMode, color: textMode }}>
+      <h1 className="text-2xl font-bold mb-4 flex items-center gap-2"><CiSettings size={30}/> Sozlamalar</h1>
 
-      {/* Theme toggle */}
+      {/*  toggle */}
       <div className="flex justify-between items-center mb-4">
-        <span>🌗 Rejim:</span>
-        <button onClick={toggleTheme} className="px-4 py-2 bg-blue-500 text-white rounded">
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </button>
+        <span className='flex items-center gap-1'><WiMoonAltWaningCrescent1/> Rejim:</span>
+        <motion.button whileTap={{ scale: 0.8 }} onClick={toggleMode} className="px-4 py-2 bg-blue-500 text-white rounded">
+          {isLight ? 'Dark Mode' : 'Light Mode'}
+        </motion.button>
       </div>
 
-      {/* Default City */}
+      {/* Def shahar */}
       <div className="mb-4">
-        <label className="block mb-1 font-semibold">🌆 Default shahar:</label>
+        <label className="block mb-1 font-semibold">Hozirgi joylashuv:</label>
         <input
           value={defaultCity}
           onChange={(e) => setDefaultCity(e.target.value)}
           className="border rounded p-2 w-full"
           placeholder="Masalan: Tashkent"
         />
-        <button onClick={handleSaveCity} className="mt-2 bg-green-500 text-white px-4 py-1 rounded">
+        <motion.button 
+          whileTap={{ scale: 0.8 }}
+          onClick={handleSaveCity}
+          className="mt-2 bg-green-500 text-white py-2 px-4 rounded cursor-pointer"
+        >
           Saqlash
-        </button>
+        </motion.button>
       </div>
 
       {/* Geolocation toggle */}
       <div className="flex justify-between items-center mb-4">
-        <span>📍 Joylashuvdan aniqlash:</span>
+        <span className='flex items-center gap-1'><MdPlace/> Joylashuvdan aniqlash:</span>
         <input
           type="checkbox"
           checked={useGeolocation}
-          onChange={() => setUseGeolocation(!useGeolocation)}
+          onChange={handleLocationToggle}
         />
       </div>
 
-      {/* Units toggle */}
-      <div className="flex justify-between items-center mb-4">
-        <span>🌡 Harorat birligi:</span>
+ {/* gradusdan farangeitga o'tish */}
+      {/* <div className="flex justify-between items-center mb-4">
+        <span className='flex items-center gap-1'><CiTempHigh color='red'/> Harorat birligi:</span>
         <select value={unit} onChange={(e) => setUnit(e.target.value)} className="p-2 rounded border">
-          <option value="C">°C</option>
-          <option value="F">°F</option>
+          <option value='false'>°C</option>
+          <option value="true">°F</option>
         </select>
-      </div>
+      </div> */}
 
-      {/* Clear cache */}
-      <div className="mt-6">
-        <button onClick={handleClearCache} className="bg-red-500 text-white px-4 py-2 rounded">
-          🧼 Keshni tozalash
-        </button>
-      </div>
+      {/* Homega qaytish */}
+      <motion.button onClick={handleBack}
+                     whileTap={{ scale: 0.8 }} 
+                     className="px-4 py-2 cursor-pointer bg-blue-500 rounded-md">
+        ortga qaytish
+      </motion.button>
     </div>
   )
 }

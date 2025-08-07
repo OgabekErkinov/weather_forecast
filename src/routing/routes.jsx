@@ -11,6 +11,6 @@ export const customRoutes = [
     },
     {
         routeElement : <ErrorPage/>,
-        routePath : '/error'
+        routePath : '*'
     }
 ]
