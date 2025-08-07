@@ -1,15 +1,9 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router'
-import useLocationStore from '../states/locationState'
 
 const ErrorPage = () => {
-  const { setCurrentLocation } = useLocationStore()
 
   const navigate = useNavigate()
-  const handleNavigate = () => {
-    setCurrentLocation('Tashkent')
-    navigate('/')
-  }
 
   return (
     <motion.div
