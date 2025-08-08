@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 
 const ErrorPage = () => {
 
@@ -46,7 +46,8 @@ const ErrorPage = () => {
 
       <motion.button
         onClick={()=>navigate('/')}
-        className="px-6 py-2 bg-white text-blue-600 rounded-xl shadow-md hover:bg-gray-200 transition cursor-pointer"
+        className="px-6 py-2 bg-white text-blue-600 rounded-xl shadow-md
+                 hover:bg-gray-200 transition cursor-pointer"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}
       >

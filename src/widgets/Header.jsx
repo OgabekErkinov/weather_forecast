@@ -1,5 +1,5 @@
 import SearchPanel from './SearchPanel'
-import SettingsButton from '../common/Settings_button'
+import SettingsButton from '../common/SettingsButton'
 import { season_picture } from '../utils/season'
 import useMode from '../states/modeState'
 

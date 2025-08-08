@@ -5,58 +5,68 @@ import useLocationStore from '../states/locationState';
 import useDataStore from '../states/dataState';
 import Routing from '../routing/Routing';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router';
-import useMode from '../states/modeState'
-import Alert_Window from '../widgets/Alert_Window';
+import { useNavigate } from 'react-router-dom';
+import useMode from '../states/modeState';
+import AlertWindow from '../widgets/AlertWindow';
 
 const Layout = () => {
   const { currentLocation, setCurrentLocation } = useLocationStore();
-  const {isLight, toggleMode, bgMode, textMode} = useMode()
+  const { isLight, toggleMode, bgMode, textMode } = useMode();
   const setCurrentData = useDataStore((state) => state.setCurrentData);
   const setForecastData = useDataStore((state) => state.setForecastData);
 
-  const {  data: currentData, isLoading: loadingCurrent, isError : errorCurrent
-  } = useQuery({
-    queryKey: ['current-weather', currentLocation],
-    queryFn: () => getCurrentWeather(currentLocation),
-    enabled: !!currentLocation,
-    staleTime: 1000 * 60 * 5,
-  });
+  const { data: currentData, isLoading: loadingCurrent, isError: errorCurrent } =
+    useQuery({
+      queryKey: ['current-weather', currentLocation],
+      queryFn: () => getCurrentWeather(currentLocation),
+      enabled: !!currentLocation,
+      staleTime: 1000 * 60 * 5,
+    });
 
-  const { data: forecastData, isLoading: loadingForecast, isError : errorForecast
-  } = useQuery({
-    queryKey: ['forecast-weather', currentLocation],
-    queryFn: () => getForecastWeather(currentLocation),
-    enabled: !!currentLocation,
-    staleTime: 1000 * 60 * 10,
-  });
+  const { data: forecastData, isLoading: loadingForecast, isError: errorForecast } =
+    useQuery({
+      queryKey: ['forecast-weather', currentLocation],
+      queryFn: () => getForecastWeather(currentLocation),
+      enabled: !!currentLocation,
+      staleTime: 1000 * 60 * 10,
+    });
 
   useEffect(() => {
-    if (currentData?.current) {
+    if (currentData && currentData.current) {
       setCurrentData(currentData);
-      setCurrentLocation(currentData?.location?.name)
+      
+      const name = currentData.location?.name;
+      if (name && name !== currentLocation) {
+        setCurrentLocation(name);
+      }
     }
-  }, [currentData?.current]);
+  }, [currentData]);
 
   useEffect(() => {
-    if (forecastData?.forecast?.forecastday) {
-      setForecastData(forecastData?.forecast?.forecastday);  
+    if (forecastData && forecastData.forecast?.forecastday) {
+      setForecastData(forecastData.forecast.forecastday);
     }
-  }, [forecastData?.forecast?.forecastday]);
+  }, [forecastData]);
 
-    const navigate = useNavigate()
-    if(errorCurrent||errorForecast){
-    navigate('/error')
+  const navigate = useNavigate();
+
+  // agar hozirgi yo'l error bo'lmasa navigatsiya qil
+  useEffect(() => {
+    if (errorCurrent || errorForecast) {
+      if (window.location.pathname !== '/error') {
+        navigate('/error');
+      }
     }
+  }, [errorCurrent, errorForecast, navigate]);
 
   return (
-    <div style={{backgroundColor : bgMode}}
-         className={`w-[90%] h-[90%] overflow-y-scroll sm:overflow-hidden rounded-2xl 
-                     shadow-xl ${!(loadingCurrent || loadingForecast) && 'p-6'}`}>
-      {
-        !(loadingCurrent || loadingForecast) ? <Routing /> : <Loading />
-      }
-      <Alert_Window/>
+    <div
+      style={{ backgroundColor: bgMode }}
+      className={`w-[90%] h-[90%] overflow-y-scroll md:overflow-hidden rounded-2xl 
+                 shadow-xl ${!(loadingCurrent || loadingForecast) && 'p-6'} relative`}
+    >
+      {!(loadingCurrent || loadingForecast) ? <Routing /> : <Loading />}
+      <AlertWindow />
     </div>
   );
 };
