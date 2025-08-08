@@ -12,7 +12,7 @@ const useMode = create((set) => ({
       return {
         isLight: isNowLight,
         bgMode: isNowLight ? '#f2f4f8' : '#0f172a',
-        secondBg: isNowLight ? '#fff' : '#1e293b',
+        secondBg: isNowLight ? '#f2f4f8' : '#1e293b',
         textMode: isNowLight ? '#1e3a8a' : '#fff',
       }
     }),

@@ -5,7 +5,7 @@ const CountryWeatherInfo = () => {
   const { currentData : current} = useDataStore()
 
   return (
-    <div className="w-full md:w-1/2 bg-blue-100 rounded-xl text-blue-900">
+    <div className="w-full md:w-1/2 bg-blue-100 rounded-xl text-blue-900 sm:shadow-xs sm:shadow-gray-600">
         <div className='w-full h-full p-6 flex flex-col items-center justify-center '>
             <h2 className="text-xl sm:text-2xl font-bold">{current?.location?.name}, {current?.location?.country}</h2>
             <img src={current?.current?.condition?.icon} alt="weather icon" className="w-30 sm:w-20 mt-4" />
