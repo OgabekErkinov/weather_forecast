@@ -29,7 +29,7 @@ const WeatherForecast = () => {
                      <img src={day?.day?.condition?.icon} alt="icon" className="w-12" />
                      <div className="flex justify-between w-full">
                         
-                            <div className="w-full flex flex-col justify-between sm:flex-row">
+                            <div className="w-full flex flex-col justify-evenly sm:flex-row">
                               <p className="font-semibold">{day?.date}</p>
                               <p className="text-sm ">{day?.day?.condition.text}</p>
                             </div>
