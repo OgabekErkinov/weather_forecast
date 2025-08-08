@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import useLocationStore from '../states/locationState'
 
 const ErrorPage = () => {
+  const { setCurrentLocation } = useLocationStore()
 
   const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    setCurrentLocation('Tashkent')
+    navigate('/')
+  }
 
   return (
     <motion.div
@@ -45,7 +52,7 @@ const ErrorPage = () => {
       </motion.p>
 
       <motion.button
-        onClick={()=>navigate('/')}
+        onClick={handleNavigate}
         className="px-6 py-2 bg-white text-blue-600 rounded-xl shadow-md
                  hover:bg-gray-200 transition cursor-pointer"
         whileHover={{ scale: 1.05 }}
